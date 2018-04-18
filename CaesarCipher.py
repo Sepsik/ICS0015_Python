@@ -13,7 +13,7 @@ def shiftString(text, shift):
     return ''.join(newText)
 
 with open('data.txt', 'r') as myFile:
-    data=myFile.read()
+    data = myFile.read()
 
 encrypted = shiftString(data, 5)
 decrypted = shiftString(encrypted, -5)
