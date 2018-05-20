@@ -7,15 +7,15 @@ class Singleton(type):
         else:
             pass
 
-class Alien(metaclass=Singleton):
+class Object(metaclass=Singleton):
     def __init__(self, name):
         self.name = name;
 
-myAlien = Alien("PiuViu")
-mySecondAlien = Alien("E.T.")
+firstObject = Object("nameOfFirstObject")
+secondObject = Object("nameOfSecondObject")
 try:
-    mySecondAlien.name
+    secondObject.name
 except:
-    print ("There can only be one alien: named {0}.".format(myAlien.name))
+    print ("There can only be one instance of type: {0}.".format(type(firstObject)))
 else:
-    print ("Now there are two aliens.")
+    print ("There are two instances of the same class.")
